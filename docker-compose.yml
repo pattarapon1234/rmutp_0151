@@ -1,22 +1,24 @@
 services: 
   db: 
     image: postgres:latest
-    container_name: my_db_pattarapon1
+    container_name: my_db_pattarapon
     ports: 
      - "65432:5432"
     environment: 
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+      volumes:
+       -./data:/ver/postgresql/data
   app:
     image: prawee/strapi
-    container_name: my_app_pattarapon1
-    ports:      
+    container_name: my_app_pattarapon
+    ports: 
      - "8080:1337"
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_HOST: db
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
