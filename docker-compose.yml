@@ -12,7 +12,7 @@ services:
     image: prawee/strapi
     container_name: my_app_pattarapon
     ports:      
-    - "8080:1337"
+     - "8080:1337"
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_NAME: ${DATABASE_NAME}
