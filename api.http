@@ -1,0 +1,15 @@
+#API
+@password={$env password}
+### Getting all usrs
+GET http://localhost:8080/api/users
+
+### Create a new usrs
+POST http://localhost:8080/api/auth/local/register
+Content-Type: application/json
+
+{
+                          "email":"123245@gmail.com",
+                        "username":"456221",
+                        "password": "{{password}}"
+
+}   
