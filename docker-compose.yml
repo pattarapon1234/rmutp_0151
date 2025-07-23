@@ -9,7 +9,7 @@ services:
         POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
         POSTGRES_DB: ${POSTGRES_DB}
       volumes:
-        - ./data:/ver/lib/postgresql/data
+        - ./data:/var/lib/postgresql/data
   app:
     image: prawee/strapi
     container_name: my_app_pattarapon
